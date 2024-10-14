@@ -10,10 +10,14 @@ def description_creator(description):
         config = json.load(config_file)
 
     # Set the OpenAI API parameters from the loaded configuration
-    openai.api_type = config[0]['api_type']
-    openai.api_key = config[0]['api_key']
-    openai.azure_endpoint = config[0]['base_url']
-    openai.api_version = config[0]['api_version']
+    openai.api_type = st.secrets["openai"]["api_type"]
+    openai.api_key = st.secrets["openai"]["api_key"]
+    openai.azure_endpoint = st.secrets["openai"]["base_url"]
+    openai.api_version = st.secrets["openai"]["api_version"]
+    # openai.api_type = config[0]['api_type']
+    # openai.api_key = config[0]['api_key']
+    # openai.azure_endpoint = config[0]['base_url']
+    # openai.api_version = config[0]['api_version']
 
     # Function to call the model
     def call_gpt(prompt):
