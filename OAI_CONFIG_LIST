@@ -1,0 +1,10 @@
+[
+    {
+            "model": "gpt-4o",
+            "api_key": "c866d334576a443db7bd0f8f09d81990",
+            "base_url": "https://dfapidmdev-gw.lamrc.net/",
+            "api_type": "azure",
+            "api_version": "2024-05-01-preview",
+            "price" : [0.005, 0.015]
+        }
+]
