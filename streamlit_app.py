@@ -4,14 +4,14 @@ import json
 
 # Function to call the model
 def call_gpt(prompt):
-    response = openai.ChatCompletion.create(
+    response = openai.chat.completions.create(
         model="gpt-4o", 
         messages=[
             {"role": "user", "content": prompt}
         ],
         seed=42,
     )
-    return response.choices.message.content, response.usage.completion_tokens, response.usage.prompt_tokens
+    return response.choices[0].message.content, response.usage.completion_tokens, response.usage.prompt_tokens
 
 # Function to create natural language description
 def description_creator(description):
